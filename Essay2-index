@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corruption 101 - Gunn Jaggi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #000000;
+            --color-text-muted: #666666;
+            --color-accent: #0066ff;
+            --color-border: #e5e5e5;
+            --color-section-bg: #fafafa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--color-accent); }
+        .essay-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #000000, #0a0a0a);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: white;
+        }
+        .essay-hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: white; }
+        .essay-tag {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.3rem 0.9rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .essay-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .essay-hero .byline { color: #999; font-size: 1rem; }
+        .essay-body { padding: 6rem 0; }
+        .essay-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+        .essay-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 3rem 0 1rem;
+            letter-spacing: -0.01em;
+        }
+        .essay-content p {
+            color: #333;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .essay-content hr {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: 3rem 0;
+        }
+        .references {
+            background: var(--color-section-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .references ul { list-style: none; padding: 0; }
+        .references li {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .references li:last-child { border-bottom: none; }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            margin-top: 3rem;
+            transition: gap 0.3s ease;
+        }
+        .back-btn:hover { gap: 0.8rem; }
+        footer {
+            background: var(--color-text);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        footer p { color: #999; font-size: 0.95rem; }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @media (max-width: 768px) {
+            .essay-hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .essay-content, .essay-hero-container { padding: 0 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="https://gunnjaggi.github.io/GunnJaggi/" class="logo">Gunn Jaggi</a>
+            <ul class="nav-links">
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#experience">Experience</a></li>
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#education">Education</a></li>
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#skills">Skills</a></li>
+                <li><a href="https://gunnjaggi.github.io/essay/">Essays</a></li>
+                <li><a href="https://gunnjaggi.github.io/cfa-tools/">CFA Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="essay-hero">
+        <div class="essay-hero-container">
+            <a href="https://gunnjaggi.github.io/essay/" class="back-link">← Back to Essays</a>
+            <div class="essay-tag">Governance</div>
+            <h1>Corruption 101: A Beginner's Guide to Going Corrupt</h1>
+            <p class="byline">By Gunn Jaggi · 2026 · 9 min read</p>
+        </div>
+    </div>
+
+    <div class="essay-body">
+        <div class="essay-content">
+
+            <p>Corruption is one of those things everyone agrees is bad, and yet it keeps happening everywhere — in democracies, autocracies, rich countries and poor ones. Governments launch anti-corruption campaigns. International bodies publish rankings. Economists build models. And still, the police officer takes the bribe, the minister awards the contract to his cousin, and the junior civil servant learns, fairly quickly, that honesty is a personal choice that the system around him has stopped making.</p>
+            <p>This essay does not offer another dry definition of corruption, nor another list of policy recommendations that sound sensible in a conference room and disappear on contact with reality. Instead, it offers four frameworks for understanding how corruption actually works — how it starts, how it spreads, how it sustains itself, and why it is so hard to stop.</p>
+
+            <h2>What Corruption Actually Is</h2>
+            <p>Corruption, in the most useful sense, is the use of public power for private gain in a way that violates the rules of the system and redirects public resources away from those they were meant to serve. Economists Gordon Tullock and Anne Krueger developed the concept of rent-seeking to describe a related phenomenon: the use of political influence to extract economic benefits without creating anything of value. Corruption is, in this sense, a form of rent-seeking with a badge.</p>
+            <p>What makes it particularly damaging is that it does not just cost money. It costs trust. Research published in Frontiers in Political Science (2026) found that corruption erodes social trust more severely in democracies than in autocracies, precisely because democratic systems are built on a promise of fairness. When that promise is broken by the people entrusted to keep it, citizens lose faith not just in the individual official — but in the system itself.</p>
+
+            <h2>Framework 1: The River Theory</h2>
+            <p>Imagine a river. Water does not flow uphill. It flows down, from the source to wherever the land takes it. Now imagine that the person at the top of an organisation — a police commissioner, a government minister, a department head — is corrupt. They take bribes. They direct contracts to allies. They make clear, through their behaviour, that the rules are negotiable if the price is right. What happens to the officers below them?</p>
+            <p>They have two choices. They can refuse to participate and face the consequences — passed over for promotion, quietly marginalised, perhaps forced out. Or they can go along with it, take their share, and survive. The River Theory describes how corruption flows downward through a hierarchy when power is concentrated at the top. One corrupt source contaminates the entire system below it.</p>
+            <p>This is what makes top-level corruption so catastrophic. It is not just about the money stolen at the top — it is about the norm that gets established. Once a system locks into a corrupt equilibrium, changing course becomes very costly because every actor in the system has adapted their behaviour to the corrupt norm (Groenewegen et al., 2010). Reformers face not just corrupt officials but an entire institutional culture that has organised itself around corruption as a way of doing business.</p>
+
+            <h2>Framework 2: The Empty Chair Theory</h2>
+            <p>Here is a thought experiment. You are a low-level government official. Someone offers you a bribe to process their application faster. You refuse. They walk out. But here is the uncomfortable follow-up: did your refusal change anything? The applicant will try again tomorrow, with someone else. The bribe will be paid. The favour will be granted. The only thing your refusal changed is that you did not get the money.</p>
+            <p>This is the logic of the Empty Chair Theory. The corrupt opportunity does not disappear because one person refuses it. It simply waits for someone else to sit in the chair. Tullock's insight was that when a financial benefit is available to whoever holds a particular position, people will compete to hold that position — and once in it, they will take the rent. The rent does not belong to the person; it belongs to the chair. Someone will always sit in it.</p>
+            <p>This is why anti-corruption campaigns that focus on individual actors often fail to change the underlying pattern. Fighting corruption requires removing the opportunity, not just the individual.</p>
+
+            <h2>Framework 3: The Rotten Potato Theory</h2>
+            <p>Take a bag of potatoes. One of them is rotten. If you leave it there, it does not just sit quietly in its corner. It spreads. The rot contaminates the potatoes around it. Left long enough, the whole bag goes. Corruption works the same way in an organisation.</p>
+            <p>One person's corrupt behaviour changes the environment for everyone around them. Research shows that the perception of corruption directly shapes the willingness to engage in it (Incio, 2024). When people believe everyone around them is corrupt, the moral barrier falls — it no longer feels like a violation, it feels like participation in the prevailing norm. A 10% increase in corruption in one context has been shown to produce a 4-11% increase in neighbouring contexts (Goel and Nelson, 2007).</p>
+            <p>Second, it changes the calculations of honest people. If you believe your colleagues are taking bribes and you are not, you are doing the same work for less reward. Over time, this becomes unsustainable — not because people are naturally dishonest, but because the incentive structure has been quietly inverted.</p>
+
+            <h2>Framework 4: The Debt Spiral Theory</h2>
+            <p>Consider someone who takes a bribe for the first time. They now have a problem they did not have before: the knowledge that they are corrupt, and the fear of being found out. To manage that risk, they need allies — people who also have something to hide. So they bring others into the arrangement. They take another bribe. Each corrupt act produces a new vulnerability, and that vulnerability requires another corrupt act to cover it.</p>
+            <p>This is the Debt Spiral. Corruption, once started, creates its own momentum. The first act of corruption is a choice. Every subsequent act is closer to a necessity. In institutional economics, this connects to path dependency — the idea that once a system moves down a particular path, the costs of reversing course increase over time (North, 1990).</p>
+            <p>This is also why whistleblowers are so rare and so consequential. Breaking the Debt Spiral requires someone to absorb the full cost of exposure. The individual cost is enormous. The social benefit is large but diffuse. This is a classic collective action problem, and it is why corruption, once systemic, tends to be self-sustaining.</p>
+
+            <h2>Why These Four Theories Together Matter</h2>
+            <p>Each framework explains something different. The River Theory explains how corruption spreads through hierarchy. The Empty Chair Theory explains why structural opportunity makes corruption persistent regardless of individual actors. The Rotten Potato Theory explains how corruption spreads sideways through social norms. The Debt Spiral Theory explains why individual actors find it so hard to exit once they have entered.</p>
+            <p>Together, they suggest that corruption is not primarily a problem of bad individuals. It is a problem of systems that make corruption rational, normal, and self-sustaining. Punishing individuals without changing structures leaves the chair empty but does not remove it. There is no clean answer here. But understanding why corruption works the way it does is the first step toward designing systems that make it harder — beginning not with the assumption that people are corrupt, but with the recognition that systems can make corruption the path of least resistance for people who might otherwise choose differently.</p>
+
+            <div class="references">
+                <h3>References</h3>
+                <ul>
+                    <li>Goel, R.K. and Nelson, M.A. (2007). Are corrupt acts contagious? Journal of Policy Modeling, 29(6).</li>
+                    <li>Groenewegen, J., Spithoven, A. and Van den Berg, A. (2010). Institutional Economics: An Introduction. Palgrave Macmillan.</li>
+                    <li>Incio, J. (2024). How the Perception of Corruption Shapes the Willingness to Bribe. International Journal of Public Opinion Research, 36(3).</li>
+                    <li>Krueger, A.O. (1974). The political economy of the rent-seeking society. American Economic Review, 64(3).</li>
+                    <li>North, D.C. (1990). Institutions, Institutional Change and Economic Performance. Cambridge University Press.</li>
+                    <li>Tullock, G. (1967). The welfare costs of tariffs, monopolies, and theft. Western Economic Journal, 5(3).</li>
+                    <li>Zhukovskaya, A. et al. (2026). Corruption erodes social trust more in democracies. Frontiers in Political Science.</li>
+                </ul>
+            </div>
+
+            <a href="https://gunnjaggi.github.io/essay/" class="back-btn">← Back to Essays</a>
+
+        </div>
+    </div>
+
+    <footer><p>© 2026 Gunn Jaggi</p></footer>
+</body>
+</html>
 

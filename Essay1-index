@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Democracy Fails to Redistribute - Gunn Jaggi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #000000;
+            --color-text-muted: #666666;
+            --color-accent: #0066ff;
+            --color-border: #e5e5e5;
+            --color-section-bg: #fafafa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--color-accent); }
+        .essay-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #000000, #0a0a0a);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: white;
+        }
+        .essay-hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: white; }
+        .essay-tag {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.3rem 0.9rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .essay-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .essay-hero .byline { color: #999; font-size: 1rem; }
+        .essay-body {
+            padding: 6rem 0;
+        }
+        .essay-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+        .essay-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 3rem 0 1rem;
+            letter-spacing: -0.01em;
+        }
+        .essay-content p {
+            color: #333;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .essay-content hr {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: 3rem 0;
+        }
+        .references {
+            background: var(--color-section-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+        .references h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .references ul { list-style: none; padding: 0; }
+        .references li {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .references li:last-child { border-bottom: none; }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            margin-top: 3rem;
+            transition: gap 0.3s ease;
+        }
+        .back-btn:hover { gap: 0.8rem; }
+        footer {
+            background: var(--color-text);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        footer p { color: #999; font-size: 0.95rem; }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @media (max-width: 768px) {
+            .essay-hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .essay-content, .essay-hero-container { padding: 0 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="https://gunnjaggi.github.io/GunnJaggi/" class="logo">Gunn Jaggi</a>
+            <ul class="nav-links">
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#experience">Experience</a></li>
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#education">Education</a></li>
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#skills">Skills</a></li>
+                <li><a href="https://gunnjaggi.github.io/essay/">Essays</a></li>
+                <li><a href="https://gunnjaggi.github.io/cfa-tools/">CFA Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="essay-hero">
+        <div class="essay-hero-container">
+            <a href="https://gunnjaggi.github.io/essay/" class="back-link">← Back to Essays</a>
+            <div class="essay-tag">Political Economy</div>
+            <h1>Why Democracy Fails to Redistribute: Caste, Religion, and the Politics of Identity in India</h1>
+            <p class="byline">By Gunn Jaggi · 2026 · 10 min read</p>
+        </div>
+    </div>
+
+    <div class="essay-body">
+        <div class="essay-content">
+
+            <h2>Introduction</h2>
+            <p>One of the most enduring assumptions in political economy is that democracy and redistribution go hand in hand. If the poor outnumber the rich — and in most societies they do — then democratic competition should, in theory, produce governments that tax the wealthy and redistribute to the majority. This is the core logic of the Meltzer-Richard model (1981), arguably the most influential framework in the study of redistributive politics. It predicts that in unequal societies, the median voter will consistently support parties that promise redistribution, and that electoral competition will force governments to deliver it.</p>
+            <p>India offers one of the most compelling challenges to this prediction. As the world's largest democracy with universal adult suffrage since 1950, it is also one of the most unequal nations in the world today. The top 1% of Indians hold approximately 40% of the country's total wealth, while the bottom 50% account for just 3% (World Inequality Database, 2024). If the Meltzer-Richard logic held, India's poor majority should have long ago voted in governments committed to aggressive redistribution. They have not. The question is why.</p>
+            <p>This essay argues that the answer lies not in institutional failure alone, but in the way political identity — caste, class, and increasingly religion — shapes what people actually want from the state and which political alliances democratic competition ends up creating. Drawing on Pavithra Suryanarayan's work on status-threat voting, B.R. Ambedkar's theory of caste and democracy, and the evolving electoral sociology of post-2014 India, I argue that identity does not simply distort redistributive preferences — it constitutes them.</p>
+
+            <h2>The Limits of the Economic Voting Model</h2>
+            <p>The Meltzer-Richard model rests on a deceptively simple assumption: that voters evaluate parties primarily on the basis of their economic interests, and that the poor, being the majority, will support redistribution. As recent scholarship has shown, this assumption fails empirically across a range of democratic contexts. A comprehensive re-analysis of redistributive politics across affluent democracies found that the mean-to-median income ratio has a consistent, negative, and highly significant effect on redistribution — directly contradicting the model's central premise (Machtei, Huber and Stephens, 2025).</p>
+            <p>In India, the failure is even more pronounced. Labour's income share declined from 32% in the 1990s to approximately 22% by 2024 (ILO). Public health expenditure has remained at around 1% of GDP, leaving 85% of the population without health expenditure support as recently as 2017-18 (PMC, 2021). These are not the outcomes of a democracy efficiently aggregating the preferences of its poor majority.</p>
+            <p>What the economic voting model misses is that voters do not arrive at the ballot box as abstract income percentiles. They arrive as members of castes, religious communities, and social hierarchies that structure not just their material circumstances but their political identities. In India, this is not a marginal complication — it is the central feature of democratic politics.</p>
+
+            <h2>Caste, Status, and the Politics of Anti-Redistribution</h2>
+            <p>The most rigorous academic account of why poor voters in India support anti-redistribution parties comes from Pavithra Suryanarayan's 2019 paper, When Do the Poor Vote for the Right Wing and Why? In hierarchical societies characterised by high social-status inequality, poor voters from historically dominant groups will support right-wing, anti-redistribution parties not despite their poverty, but because of the particular value that social status holds for them.</p>
+            <p>Suryanarayan tests this using the 1990 Mandal Commission announcement as a natural experiment. Using digitised data from the 1931 census merged with state-level electoral outcomes, she shows that constituencies where Brahmans had historically dominated education saw a significantly larger surge in BJP vote share after the announcement. Crucially, this pattern did not exist in elections held before the threat materialised.</p>
+            <p>Poor Brahmans were not acting against their own interests — they were protecting a different kind of interest, one rooted in social rank rather than income. The implications for democratic theory are significant: if a substantial portion of the poor electorate evaluates redistribution as a threat to the social order they benefit from, democratic competition does not produce redistribution — it produces the defence of whichever hierarchy commands the loyalty of a viable electoral coalition.</p>
+
+            <h2>The Double-Edged Sword: Identity as Both Tool and Obstacle</h2>
+            <p>It would be a mistake to conclude that political identity is simply an obstacle to redistribution in India. B.R. Ambedkar argued that caste identity needed to be mobilised as a political instrument before it could be dismantled as a social one (Ambedkar, Annihilation of Caste, 1936). The rise of the Bahujan Samaj Party in Uttar Pradesh, which brought Mayawati to the Chief Ministership four times, is the most visible expression of this logic in action.</p>
+            <p>Political identity in India is therefore double-edged. It has been the vehicle through which marginalised groups have demanded redistribution and forced the state to respond. It has simultaneously been deployed to build anti-redistribution coalitions. If the same variable can both enable and undermine redistribution depending on context, what does that mean for how we design governance systems and policy frameworks that are resilient to identity-based capture?</p>
+
+            <h2>Post-2014: When Religion Replaces Caste</h2>
+            <p>Suryanarayan's framework is analytically powerful for understanding the 1990 Mandal moment, but India's political landscape has shifted significantly. Her own 2004 survey data showed Scheduled Caste and Scheduled Tribe voters as the least likely of all caste groups to vote for the BJP, at a predicted probability of just 0.15 in high Brahman-dominance constituencies. The status-threat argument would predict this: SC/ST voters have no historical status to protect.</p>
+            <p>Yet by the 2019 general elections, approximately one third of Dalits and over 37% of OBC voters cast their ballots for the BJP (Lokniti-CSDS, 2019). Scholars like Pratap Bhanu Mehta have argued that the BJP has increasingly mobilised voters through a unified Hindu religious identity — one that cuts across caste boundaries and creates a different kind of cross-group coalition, built not on shared social rank but on shared religious belonging (Mehta, 2022). This represents a mechanism that Suryanarayan's status-threat framework was not designed to explain.</p>
+            <p>The question is no longer simply why poor upper-caste voters resist redistribution, but why the very lower-caste voters predicted to demand it are increasingly aligning with parties that do not deliver it.</p>
+
+            <h2>Conclusion</h2>
+            <p>India's redistribution failure is not, at its core, a technical problem. It is a political one. The country has the institutional architecture of a democracy, a constitution with strong redistributive commitments, and a poor majority with obvious economic incentives to demand more from the state. What it lacks is a stable political coalition committed to redistribution that is capable of sustaining power against the identity-based coalitions that democratic competition has repeatedly produced.</p>
+            <p>The Meltzer-Richard model assumes that voters are atomised income-maximisers. In India, they are members of communities with histories, hierarchies, and social interests that do not reduce to income. Understanding why redistribution fails here requires taking seriously not just what people earn, but who they are — and who they are told they are by the parties competing for their votes.</p>
+
+            <div class="references">
+                <h3>References</h3>
+                <ul>
+                    <li>Ambedkar, B.R. (1936). Annihilation of Caste. Self-published.</li>
+                    <li>CASI (2024). The Evolution of India's Social Welfare Regime. University of Pennsylvania.</li>
+                    <li>ILO (2024). World Employment and Social Outlook. International Labour Organisation.</li>
+                    <li>Lokniti-CSDS (2019). National Election Study. Centre for the Study of Developing Societies.</li>
+                    <li>Machtei, I., Huber, E. and Stephens, J.D. (2025). Goodbye to Meltzer-Richard. Politics & Society.</li>
+                    <li>Mehta, P.B. (2022). Hindu Nationalism: From Ethnic Identity to Authoritarian Repression. Carnegie Endowment.</li>
+                    <li>Meltzer, A.H. and Richard, S.F. (1981). A rational theory of the size of government. Journal of Political Economy, 89(5).</li>
+                    <li>PMC/NIH (2021). The Crisis of Extreme Inequality in India. Indian Journal of Labour Economics, 64(3).</li>
+                    <li>Suryanarayan, P. (2019). When do the poor vote for the right wing and why? Comparative Political Studies, 52(2).</li>
+                    <li>World Inequality Database (2024). India: Income and Wealth Inequality.</li>
+                </ul>
+            </div>
+
+            <a href="https://gunnjaggi.github.io/essay/" class="back-btn">← Back to Essays</a>
+
+        </div>
+    </div>
+
+    <footer><p>© 2026 Gunn Jaggi</p></footer>
+</body>
+</html>
 

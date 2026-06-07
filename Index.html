@@ -16,15 +16,8 @@
             --color-border: #e5e5e5;
             --color-section-bg: #fafafa;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Inter', sans-serif;
             background: var(--color-bg);
@@ -33,20 +26,15 @@
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* Navigation */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            top: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--color-border);
             z-index: 1000;
             padding: 1.5rem 0;
         }
-
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -55,7 +43,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-size: 1.1rem;
             font-weight: 700;
@@ -63,14 +50,12 @@
             text-decoration: none;
             letter-spacing: -0.02em;
         }
-
         .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
             align-items: center;
         }
-
         .nav-links a {
             color: var(--color-text);
             text-decoration: none;
@@ -78,39 +63,20 @@
             font-weight: 500;
             transition: color 0.3s ease;
         }
-
         .nav-links a:hover { color: var(--color-accent); }
-
         .nav-links a.active { color: var(--color-accent); }
-
-        /* Page Header */
         .page-header {
             padding: 10rem 0 6rem;
-            background: var(--color-text);
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #000000, #0a0a0a);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             color: white;
         }
-
         .page-header-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 3rem;
         }
-
-        .page-header h1 {
-            font-size: 4.5rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .page-header p {
-            font-size: 1.2rem;
-            color: #999;
-            max-width: 600px;
-            line-height: 1.7;
-        }
-
         .page-header .tag {
             display: inline-block;
             background: var(--color-accent);
@@ -123,41 +89,41 @@
             text-transform: uppercase;
             margin-bottom: 1.5rem;
         }
-
-        /* Essays Grid */
-        .essays-section {
-            padding: 8rem 0;
+        .page-header h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
         }
-
+        .page-header p {
+            font-size: 1.2rem;
+            color: #999;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+        .essays-section { padding: 8rem 0; }
         .section-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 3rem;
         }
-
-        .essays-grid {
-            display: grid;
-            gap: 2.5rem;
-        }
-
+        .essays-grid { display: grid; gap: 2.5rem; }
         .essay-card {
             background: white;
             border: 1px solid var(--color-border);
             border-radius: 12px;
             padding: 3rem;
             transition: all 0.3s ease;
-            cursor: pointer;
             text-decoration: none;
             color: inherit;
             display: block;
         }
-
         .essay-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
             border-color: var(--color-accent);
         }
-
         .essay-meta {
             display: flex;
             align-items: center;
@@ -165,7 +131,6 @@
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
-
         .essay-tag {
             background: var(--color-section-bg);
             color: var(--color-accent);
@@ -177,17 +142,8 @@
             text-transform: uppercase;
             border: 1px solid var(--color-border);
         }
-
-        .essay-date {
-            color: var(--color-text-muted);
-            font-size: 0.9rem;
-        }
-
-        .essay-read-time {
-            color: var(--color-text-muted);
-            font-size: 0.9rem;
-        }
-
+        .essay-date { color: var(--color-text-muted); font-size: 0.9rem; }
+        .essay-read-time { color: var(--color-text-muted); font-size: 0.9rem; }
         .essay-card h2 {
             font-size: 2rem;
             font-weight: 800;
@@ -195,20 +151,17 @@
             line-height: 1.2;
             margin-bottom: 1rem;
         }
-
         .essay-card p {
             color: var(--color-text-muted);
             line-height: 1.8;
             font-size: 1.05rem;
             margin-bottom: 2rem;
         }
-
         .essay-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .read-link {
             color: var(--color-accent);
             font-weight: 600;
@@ -218,11 +171,7 @@
             gap: 0.5rem;
             transition: gap 0.3s ease;
         }
-
-        .essay-card:hover .read-link {
-            gap: 0.8rem;
-        }
-
+        .essay-card:hover .read-link { gap: 0.8rem; }
         .essay-number {
             font-size: 4rem;
             font-weight: 800;
@@ -230,202 +179,70 @@
             letter-spacing: -0.03em;
             line-height: 1;
         }
-
-        /* Essay Full Content */
-        .essay-content-section {
-            padding: 6rem 0;
-            background: var(--color-section-bg);
-            display: none;
-        }
-
-        .essay-content-section.active {
-            display: block;
-        }
-
-        .essay-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 3rem;
-        }
-
-        .essay-content h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .essay-content .byline {
-            color: var(--color-text-muted);
-            margin-bottom: 3rem;
-            font-size: 1rem;
-        }
-
-        .essay-content h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin: 3rem 0 1rem;
-            letter-spacing: -0.01em;
-        }
-
-        .essay-content p {
-            color: #333;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .essay-content hr {
-            border: none;
-            border-top: 1px solid var(--color-border);
-            margin: 3rem 0;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-accent);
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            margin-bottom: 3rem;
-            background: none;
-            border: none;
-            padding: 0;
-            transition: gap 0.3s ease;
-        }
-
-        .back-btn:hover { gap: 0.8rem; }
-
-        /* References */
-        .references {
-            background: white;
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .references h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--color-text);
-        }
-
-        .references ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .references li {
-            color: var(--color-text-muted);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .references li:last-child { border-bottom: none; }
-
-        /* Footer */
         footer {
             background: var(--color-text);
             color: white;
             padding: 3rem 0;
             text-align: center;
         }
-
         footer p { color: #999; font-size: 0.95rem; }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .reveal {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .reveal.active { opacity: 1; transform: translateY(0); }
         .essay-card:nth-child(1) { transition-delay: 0.1s; }
         .essay-card:nth-child(2) { transition-delay: 0.2s; }
-        .essay-card:nth-child(3) { transition-delay: 0.3s; }
-
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
-        .page-header {
-            background: linear-gradient(-45deg, #000000, #1a1a1a, #000000, #0a0a0a);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-
         @media (max-width: 768px) {
             .page-header h1 { font-size: 2.8rem; }
             .essay-card h2 { font-size: 1.5rem; }
             .nav-links { display: none; }
             .section-container, .page-header-container { padding: 0 1.5rem; }
-            .essay-content { padding: 0 1.5rem; }
         }
     </style>
 </head>
-<body id="top">
-
-    <!-- Navigation -->
+<body>
     <nav>
         <div class="nav-container">
-            <a href="/GunnJaggi/" class="logo">Gunn Jaggi</a>
+            <a href="https://gunnjaggi.github.io/GunnJaggi/" class="logo">Gunn Jaggi</a>
             <ul class="nav-links">
-                <li><a href="/GunnJaggi/#about">About</a></li>
-                <li><a href="/GunnJaggi/#experience">Experience</a></li>
-                <li><a href="/GunnJaggi/#education">Education</a></li>
-                <li><a href="/GunnJaggi/#skills">Skills</a></li>
-                <li><a href="/GunnJaggi/#volunteering">Volunteering</a></li>
-                <li><a href="/GunnJaggi/#projects">Projects</a></li>
-                <li><a href="/GunnJaggi/essays.html" class="active">Essays</a></li>
-                <li><a href="/cfa-tools/">CFA Tools</a></li>
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#experience">Experience</a></li>
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#education">Education</a></li>
+                <li><a href="https://gunnjaggi.github.io/GunnJaggi/#skills">Skills</a></li>
+                <li><a href="https://gunnjaggi.github.io/essay/" class="active">Essays</a></li>
+                <li><a href="https://gunnjaggi.github.io/cfa-tools/">CFA Tools</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <div class="page-header" id="essays-list-header">
+    <div class="page-header">
         <div class="page-header-container">
             <span class="tag">Academic Writing</span>
             <h1>Essays &amp; Research</h1>
-            <p>Independent writing on political economy, governance, inequality, and development. These essays sit at the intersection of economics and public policy.</p>
+            <p>Independent writing on political economy, governance, inequality, and development.</p>
         </div>
     </div>
 
-    <!-- Essays List -->
-    <section class="essays-section" id="essays-list">
+    <section class="essays-section">
         <div class="section-container">
             <div class="essays-grid">
 
-                <!-- Essay 1 -->
-                <a class="essay-card reveal" href="#" onclick="showEssay('essay1'); return false;">
+                <a class="essay-card reveal" href="https://gunnjaggi.github.io/essay/essay1/">
                     <div class="essay-meta">
                         <span class="essay-tag">Political Economy</span>
                         <span class="essay-date">2026</span>
                         <span class="essay-read-time">· 10 min read</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div style="flex: 1;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                        <div style="flex:1;">
                             <h2>Why Democracy Fails to Redistribute: Caste, Religion, and the Politics of Identity in India</h2>
-                            <p>One of the most enduring assumptions in political economy is that democracy and redistribution go hand in hand. India — the world's largest democracy and one of its most unequal societies — presents a compelling challenge to that assumption. This essay examines how caste, class, and religion shape redistributive politics, drawing on Suryanarayan's status-threat framework, Ambedkar's theory of democracy, and post-2014 electoral data.</p>
+                            <p>India — the world's largest democracy and one of its most unequal societies — presents a compelling challenge to the assumption that democracy and redistribution go hand in hand. This essay examines how caste, class, and religion shape redistributive politics, drawing on Suryanarayan's status-threat framework, Ambedkar's theory of democracy, and post-2014 electoral data.</p>
                         </div>
                         <div class="essay-number">01</div>
                     </div>
@@ -434,17 +251,16 @@
                     </div>
                 </a>
 
-                <!-- Essay 2 -->
-                <a class="essay-card reveal" href="#" onclick="showEssay('essay2'); return false;">
+                <a class="essay-card reveal" href="https://gunnjaggi.github.io/essay/essay2/">
                     <div class="essay-meta">
                         <span class="essay-tag">Governance</span>
                         <span class="essay-date">2026</span>
                         <span class="essay-read-time">· 9 min read</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div style="flex: 1;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                        <div style="flex:1;">
                             <h2>Corruption 101: A Beginner's Guide to Going Corrupt</h2>
-                            <p>Corruption is one of those things everyone agrees is bad, and yet it keeps happening everywhere. This essay proposes four original frameworks — the River Theory, the Empty Chair Theory, the Rotten Potato Theory, and the Debt Spiral — to explain how corruption starts, spreads, sustains itself, and why it is so hard to stop.</p>
+                            <p>This essay proposes four original frameworks — the River Theory, the Empty Chair Theory, the Rotten Potato Theory, and the Debt Spiral — to explain how corruption starts, spreads, sustains itself, and why it is so hard to stop.</p>
                         </div>
                         <div class="essay-number">02</div>
                     </div>
@@ -457,170 +273,22 @@
         </div>
     </section>
 
-    <!-- Essay 1 Full Content -->
-    <div id="essay1" class="essay-content-section">
-        <div class="essay-content">
-            <button class="back-btn" onclick="showList()">← Back to Essays</button>
-            <h1>Why Democracy Fails to Redistribute: Caste, Religion, and the Politics of Identity in India</h1>
-            <p class="byline">By Gunn Jaggi · 2026 · Political Economy</p>
-            <hr>
-
-            <h2>Introduction</h2>
-            <p>One of the most enduring assumptions in political economy is that democracy and redistribution go hand in hand. If the poor outnumber the rich — and in most societies they do — then democratic competition should, in theory, produce governments that tax the wealthy and redistribute to the majority. This is the core logic of the Meltzer-Richard model (1981), arguably the most influential framework in the study of redistributive politics. It predicts that in unequal societies, the median voter — whose income falls below the mean — will consistently support parties that promise redistribution, and that electoral competition will force governments to deliver it.</p>
-            <p>India offers one of the most compelling challenges to this prediction. As the world's largest democracy with universal adult suffrage since 1950, it is also one of the most unequal nations in the world today. The top 1% of Indians hold approximately 40% of the country's total wealth, while the bottom 50% account for just 3% (World Inequality Database, 2024). Scheduled Caste earnings average just 55% of those of relatively advantaged social groups, and nearly 905 million people lack access to piped water (PMC, 2021). If the Meltzer-Richard logic held, India's poor majority should have long ago voted in governments committed to aggressive redistribution. They have not — at least not consistently or effectively. The question is why.</p>
-            <p>This essay argues that the answer lies not in institutional failure alone, but in the way political identity — caste, class, and increasingly religion — shapes what people actually want from the state and which political alliances democratic competition ends up creating. Drawing on Pavithra Suryanarayan's work on status-threat voting, B.R. Ambedkar's theory of caste and democracy, and the evolving electoral sociology of post-2014 India, I argue that identity does not simply distort redistributive preferences — it constitutes them.</p>
-
-            <h2>The Limits of the Economic Voting Model</h2>
-            <p>The Meltzer-Richard model rests on a deceptively simple assumption: that voters evaluate parties primarily on the basis of their economic interests, and that the poor, being the majority, will support redistribution. As recent scholarship has shown, this assumption fails empirically across a range of democratic contexts. A comprehensive re-analysis of redistributive politics across affluent democracies found that the mean-to-median income ratio has a consistent, negative, and highly significant effect on redistribution — directly contradicting the model's central premise (Machtei, Huber and Stephens, 2025).</p>
-            <p>In India, the failure is even more pronounced. India's growth story since liberalisation has been characterised by widening inequality and a failure of the state to lift its citizens out of poverty, despite decades of electoral competition (CASI, 2024). Labour's income share declined from 32% in the 1990s to approximately 22% by 2024 (ILO). Public health expenditure has remained at around 1% of GDP, leaving 85% of the population without health expenditure support as recently as 2017–18 (PMC, 2021). These are not the outcomes of a democracy efficiently aggregating the preferences of its poor majority.</p>
-            <p>What the economic voting model misses is that voters do not arrive at the ballot box as abstract income percentiles. They arrive as members of castes, religious communities, linguistic groups, and social hierarchies that structure not just their material circumstances but their political identities and their understanding of what the state owes them. In India, this is not a marginal complication — it is the central feature of democratic politics.</p>
-
-            <h2>Caste, Status, and the Politics of Anti-Redistribution</h2>
-            <p>The most rigorous academic account of why poor voters in India support anti-redistribution parties comes from Pavithra Suryanarayan's 2019 paper, When Do the Poor Vote for the Right Wing and Why? Her argument is elegant and counterintuitive. In hierarchical societies characterised by high social-status inequality, poor voters from historically dominant groups will support right-wing, anti-redistribution parties not despite their poverty, but because of the particular value that social status holds for them.</p>
-            <p>Suryanarayan tests this using the 1990 Mandal Commission announcement — the Indian government's decision to implement affirmative action reservations for lower castes in government employment — as a natural experiment. Using uniquely digitised data from the 1931 census merged with state-level electoral outcomes, she shows that constituencies where Brahmans had historically dominated education saw a significantly larger surge in BJP vote share after the announcement than other areas. Crucially, this pattern did not exist in elections held before the threat materialised.</p>
-            <p>The mechanism she identifies has two dimensions. The first is psychic: Brahmans derive emotional and social rewards from their rank in the caste hierarchy — ritual prestige, social networks, access to shared spaces — and these rewards hold greater value for poor Brahmans, for whom status is one of the few advantages they possess. The second is material: status goods such as segregated schools, temples, and professional networks have real economic value, and their redistribution to lower-caste groups represents a genuine material loss. Poor Brahmans were not acting against their own interests — they were protecting a different kind of interest, one rooted in social rank rather than income. The implications for democratic theory are significant: if a substantial portion of the poor electorate evaluates redistribution as a threat to the social order they benefit from, democratic competition does not produce redistribution — it produces the defence of whichever hierarchy commands the loyalty of a viable electoral coalition.</p>
-
-            <h2>The Double-Edged Sword: Identity as Both Tool and Obstacle</h2>
-            <p>It would be a mistake, however, to conclude that political identity is simply an obstacle to redistribution in India. The same force that mobilised upper-caste Brahmans against the Mandal Commission has, at other moments, driven some of the most significant redistributive gains in Indian democratic history.</p>
-            <p>B.R. Ambedkar, the architect of India's constitution and the defining intellectual voice of Dalit emancipation, understood this tension clearly. He argued that political democracy must be accompanied by social and economic democracy, and that caste identity — far from being an obstacle to be dissolved — needed to be mobilised as a political instrument before it could be dismantled as a social one (Ambedkar, Annihilation of Caste, 1936). The rise of the Bahujan Samaj Party in Uttar Pradesh, which brought Mayawati to the Chief Ministership four times and forced mainstream parties to engage seriously with Dalit interests, is the most visible expression of this logic in action.</p>
-            <p>Political identity in India is therefore double-edged. It has been the vehicle through which marginalised groups have demanded redistribution and forced the state to respond. It has simultaneously been deployed to build anti-redistribution coalitions among groups whose social position makes them resistant to redistributive politics even when their income would suggest otherwise. If the same variable can both enable and undermine redistribution depending on context, what does that mean for how we design governance systems and policy frameworks that are resilient to identity-based capture?</p>
-
-            <h2>Post-2014: When Religion Replaces Caste</h2>
-            <p>Suryanarayan's framework is analytically powerful for understanding the 1990 Mandal moment, but India's political landscape has shifted significantly — in ways that raise new questions. Her own 2004 survey data showed Scheduled Caste and Scheduled Tribe voters as the least likely of all caste groups to vote for the BJP, sitting at a predicted probability of just 0.15 in high Brahman-dominance constituencies. The status-threat argument would predict this: SC/ST voters have no historical status to protect.</p>
-            <p>Yet by the 2019 general elections, approximately one third of Dalits and over 37% of OBC voters cast their ballots for the BJP (Lokniti-CSDS, 2019). Scholars like Pratap Bhanu Mehta have argued that the BJP has increasingly mobilised voters not through caste-based status appeals but through a unified Hindu religious identity — one that cuts across caste boundaries and creates a different kind of cross-group coalition, built not on shared social rank but on shared religious belonging (Mehta, 2022). This represents a mechanism that Suryanarayan's status-threat framework was not designed to explain.</p>
-            <p>The distinction matters enormously for public policy. If anti-redistribution coalitions were solely a product of caste-based status threat, the policy response would focus on reducing the psychic and material value of caste hierarchy. But if the more recent dynamic is driven by a constructed religious identity that transcends caste, the mechanisms are different and the policy implications less clear. The question is no longer simply why poor upper-caste voters resist redistribution, but why the very lower-caste voters predicted to demand it are increasingly aligning with parties that do not deliver it.</p>
-
-            <h2>Conclusion</h2>
-            <p>India's redistribution failure is not, at its core, a technical problem. It is a political one. The country has the institutional architecture of a democracy, a constitution with strong redistributive commitments, and a poor majority with obvious economic incentives to demand more from the state. What it lacks is a stable political coalition committed to redistribution that is capable of winning and sustaining power against the identity-based coalitions that democratic competition has repeatedly produced.</p>
-            <p>The Meltzer-Richard model assumes that voters are atomised income-maximisers. In India, they are members of communities with histories, hierarchies, and social interests that do not reduce to income. Understanding why redistribution fails here requires taking seriously not just what people earn, but who they are — and who they are told they are by the parties competing for their votes. India remains one of the most important and instructive cases through which to examine that question — and the answers it offers are neither simple nor comfortable.</p>
-
-            <div class="references">
-                <h3>References</h3>
-                <ul>
-                    <li>Ambedkar, B.R. (1936). Annihilation of Caste. Self-published.</li>
-                    <li>CASI (2024). The Evolution of India's Social Welfare Regime. University of Pennsylvania.</li>
-                    <li>ILO (2024). World Employment and Social Outlook. International Labour Organisation.</li>
-                    <li>Lokniti-CSDS (2019). National Election Study. Centre for the Study of Developing Societies.</li>
-                    <li>Machtei, I., Huber, E. and Stephens, J.D. (2025). Goodbye to Meltzer-Richard. Politics & Society.</li>
-                    <li>Mehta, P.B. (2022). Hindu Nationalism: From Ethnic Identity to Authoritarian Repression. Carnegie Endowment.</li>
-                    <li>Meltzer, A.H. and Richard, S.F. (1981). A rational theory of the size of government. Journal of Political Economy, 89(5).</li>
-                    <li>PMC/NIH (2021). The Crisis of Extreme Inequality in India. Indian Journal of Labour Economics, 64(3).</li>
-                    <li>Suryanarayan, P. (2019). When do the poor vote for the right wing and why? Comparative Political Studies, 52(2).</li>
-                    <li>World Inequality Database (2024). India: Income and Wealth Inequality.</li>
-                </ul>
-            </div>
-
-            <button class="back-btn" onclick="showList()" style="margin-top: 3rem;">← Back to Essays</button>
-        </div>
-    </div>
-
-    <!-- Essay 2 Full Content -->
-    <div id="essay2" class="essay-content-section">
-        <div class="essay-content">
-            <button class="back-btn" onclick="showList()">← Back to Essays</button>
-            <h1>Corruption 101: A Beginner's Guide to Going Corrupt</h1>
-            <p class="byline">By Gunn Jaggi · 2026 · Governance</p>
-            <hr>
-
-            <p>Corruption is one of those things everyone agrees is bad, and yet it keeps happening everywhere — in democracies, autocracies, rich countries and poor ones. Governments launch anti-corruption campaigns. International bodies publish rankings. Economists build models. And still, the police officer takes the bribe, the minister awards the contract to his cousin, and the junior civil servant learns, fairly quickly, that honesty is a personal choice that the system around him has stopped making.</p>
-            <p>This essay does not offer another dry definition of corruption, nor another list of policy recommendations that sound sensible in a conference room and disappear on contact with reality. Instead, it offers four frameworks for understanding how corruption actually works — how it starts, how it spreads, how it sustains itself, and why it is so hard to stop. These are not borrowed from existing literature, though they connect to it. They are an attempt to think clearly about a problem that is usually discussed in ways that make it seem more complicated, or more mysterious, than it really is.</p>
-
-            <h2>What Corruption Actually Is</h2>
-            <p>Before the frameworks, a brief definition. Corruption, in the most useful sense, is the use of public power for private gain in a way that violates the rules of the system — and, more importantly, in a way that redirects public resources away from those they were meant to serve.</p>
-            <p>Economists Gordon Tullock and Anne Krueger developed the concept of rent-seeking in the 1960s and 1970s to describe a related phenomenon: the use of political influence to extract economic benefits without creating anything of value. A firm that lobbies for a regulation that blocks competitors, or an official who demands payment to process a permit that should be free, is not producing anything. They are redistributing resources toward themselves at someone else's expense. Corruption is, in this sense, a form of rent-seeking with a badge.</p>
-            <p>What makes it particularly damaging is that it does not just cost money. It costs trust. Research published in Frontiers in Political Science (2026) found that corruption erodes social trust more severely in democracies than in autocracies, precisely because democratic systems are built on a promise of fairness. When that promise is broken by the people entrusted to keep it, citizens do not just lose faith in the individual official — they lose faith in the system itself.</p>
-
-            <h2>Framework 1: The River Theory</h2>
-            <p>Imagine a river. Water does not flow uphill. It flows down, from the source to wherever the land takes it.</p>
-            <p>Now imagine that the person at the top of an organisation — a police commissioner, a government minister, a department head — is corrupt. They take bribes. They direct contracts to allies. They make clear, through their behaviour, that the rules are negotiable if the price is right. What happens to the officers below them?</p>
-            <p>They have two choices. They can refuse to participate, maintain their integrity, and face the consequences — passed over for promotion, quietly marginalised, perhaps forced out. Or they can go along with it, take their share, and survive. The River Theory describes how corruption flows downward through a hierarchy when power is concentrated at the top. One corrupt source contaminates the entire system below it.</p>
-            <p>This is what makes top-level corruption so catastrophic. It is not just about the money stolen at the top. It is about the norm that gets established. Once a system locks into a corrupt equilibrium, changing course becomes very costly because every actor in the system has adapted their behaviour to the corrupt norm (Groenewegen et al., 2010). Reformers face not just corrupt officials but an entire institutional culture that has organised itself around corruption as a way of doing business.</p>
-
-            <h2>Framework 2: The Empty Chair Theory</h2>
-            <p>Here is a thought experiment. You are a low-level government official. Someone offers you a bribe to process their application faster. You refuse. They walk out. But here is the uncomfortable follow-up: did your refusal change anything? The applicant will try again tomorrow, with someone else. The bribe will be paid. The favour will be granted. The only thing your refusal changed is that you did not get the money.</p>
-            <p>This is the logic of the Empty Chair Theory. The corrupt opportunity does not disappear because one person refuses it. It simply waits for someone else to sit in the chair. This relates to what economists call the problem of contestable rents. Tullock's insight was that when a financial benefit is available to whoever holds a particular position, people will compete to hold that position — and once in it, they will take the rent. The rent does not belong to the person; it belongs to the chair. Someone will always sit in it.</p>
-            <p>This is why anti-corruption campaigns that focus on individual actors — naming corrupt officials, removing bad apples — often fail to change the underlying pattern. If the structural opportunity remains, the next person in the role faces the same incentives. The policy implication is significant: fighting corruption requires removing the opportunity, not just the individual.</p>
-
-            <h2>Framework 3: The Rotten Potato Theory</h2>
-            <p>Take a bag of potatoes. One of them is rotten. If you leave it there, it does not just sit quietly in its corner. It spreads. The rot contaminates the potatoes around it. Left long enough, the whole bag goes.</p>
-            <p>Corruption works the same way in an organisation. One person's corrupt behaviour changes the environment for everyone around them. First, it changes what people believe is normal. Research shows that the perception of corruption directly shapes the willingness to engage in it (Incio, 2024). When people believe everyone around them is corrupt, the moral barrier falls. It no longer feels like a violation — it feels like participation in the prevailing norm. A 10% increase in corruption in one context has been shown to produce a 4–11% increase in neighbouring contexts (Goel and Nelson, 2007).</p>
-            <p>Second, it changes the calculations of honest people. If you believe your colleagues are taking bribes and you are not, you are doing the same work for less reward. Over time, this becomes unsustainable — not because people are naturally dishonest, but because the incentive structure has been quietly inverted. The Rotten Potato Theory explains why corruption, once established, tends to spread until it becomes systemic.</p>
-
-            <h2>Framework 4: The Debt Spiral Theory</h2>
-            <p>The final framework explains not just why corruption starts, but why it is so hard to stop once it has started. Consider someone who takes a bribe for the first time. They now have a problem they did not have before: the knowledge that they are corrupt, and the fear of being found out. To manage that risk, they need allies — people who also have something to hide. So they bring others into the arrangement. They take another bribe. Each corrupt act produces a new vulnerability, and that vulnerability requires another corrupt act to cover it.</p>
-            <p>This is the Debt Spiral. Corruption, once started, creates its own momentum. The first act of corruption is a choice. Every subsequent act is closer to a necessity. In institutional economics, this connects to path dependency — the idea that once a system moves down a particular path, the costs of reversing course increase over time (North, 1990). The original choice to take a bribe locks the individual into a structure of mutual vulnerability that becomes increasingly hard to exit.</p>
-            <p>This is also why whistleblowers are so rare and so consequential. Breaking the Debt Spiral requires someone to absorb the full cost of exposure — to accept their own vulnerability in order to expose everyone else's. The individual cost is enormous. The social benefit is large but diffuse. This is a classic collective action problem, and it is why corruption, once systemic, tends to be self-sustaining.</p>
-
-            <h2>Why These Four Theories Together Matter</h2>
-            <p>Each framework explains something different. The River Theory explains how corruption spreads through hierarchy. The Empty Chair Theory explains why structural opportunity makes corruption persistent regardless of individual actors. The Rotten Potato Theory explains how corruption spreads sideways through social norms. The Debt Spiral Theory explains why individual actors find it so hard to exit once they have entered.</p>
-            <p>Together, they suggest that corruption is not primarily a problem of bad individuals. It is a problem of systems that make corruption rational, normal, and self-sustaining. Punishing individuals without changing structures leaves the chair empty but does not remove it. Changing the rules without changing the culture leaves the norms intact. And addressing the culture without breaking the spiral of mutual complicity means that even willing reformers find themselves trapped.</p>
-            <p>There is no clean answer here. But understanding why corruption works the way it does is the first step toward designing systems that make it harder — beginning not with the assumption that people are corrupt, but with the recognition that systems can make corruption the path of least resistance for people who might otherwise choose differently.</p>
-
-            <div class="references">
-                <h3>References</h3>
-                <ul>
-                    <li>Goel, R.K. and Nelson, M.A. (2007). Are corrupt acts contagious? Journal of Policy Modeling, 29(6).</li>
-                    <li>Groenewegen, J., Spithoven, A. and Van den Berg, A. (2010). Institutional Economics: An Introduction. Palgrave Macmillan.</li>
-                    <li>Incio, J. (2024). How the Perception of Corruption Shapes the Willingness to Bribe. International Journal of Public Opinion Research, 36(3).</li>
-                    <li>Krueger, A.O. (1974). The political economy of the rent-seeking society. American Economic Review, 64(3).</li>
-                    <li>North, D.C. (1990). Institutions, Institutional Change and Economic Performance. Cambridge University Press.</li>
-                    <li>Tullock, G. (1967). The welfare costs of tariffs, monopolies, and theft. Western Economic Journal, 5(3).</li>
-                    <li>Zhukovskaya, A. et al. (2026). The price of accountability: corruption erodes social trust more in democracies than in autocracies. Frontiers in Political Science.</li>
-                </ul>
-            </div>
-
-            <button class="back-btn" onclick="showList()" style="margin-top: 3rem;">← Back to Essays</button>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Gunn Jaggi</p>
-    </footer>
+    <footer><p>© 2026 Gunn Jaggi</p></footer>
 
     <script>
-        function showEssay(id) {
-            document.getElementById('essays-list').style.display = 'none';
-            document.getElementById('essays-list-header').style.display = 'none';
-            document.querySelectorAll('.essay-content-section').forEach(el => el.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function showList() {
-            document.querySelectorAll('.essay-content-section').forEach(el => el.classList.remove('active'));
-            document.getElementById('essays-list').style.display = 'block';
-            document.getElementById('essays-list-header').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-            // Hover tilt on cards
             document.querySelectorAll('.essay-card').forEach(card => {
                 card.addEventListener('mousemove', (e) => {
                     const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const rotateX = (y - rect.height / 2) / 25;
-                    const rotateY = (rect.width / 2 - x) / 25;
+                    const rotateX = (e.clientY - rect.top - rect.height/2) / 25;
+                    const rotateY = (rect.width/2 - (e.clientX - rect.left)) / 25;
                     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
                 });
                 card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-            });
-
-            // Navbar scroll
-            const nav = document.querySelector('nav');
-            window.addEventListener('scroll', () => {
-                nav.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,0.1)' : 'none';
             });
         });
     </script>
